@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - Dart Tracker</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #e6edf3;
+            --text-dim: #8b949e;
+            --accent-dodano: #238636;
+            --accent-usunieto: #da3633;
+            --accent-poprawiono: #1f6feb;
+            --accent-komunikat: #d29922;
+            --accent-bug: #8e1519;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, #fff, #8b949e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        #changelog-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Styl karty wersji */
+        .version-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .version-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+        }
+
+        .version-header {
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .version-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: #58a6ff;
+            font-size: 1.1rem;
+        }
+
+        pre {
+            margin: 0;
+            padding: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Inter', sans-serif; /* Bardziej czytelne niż mono dla list */
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* Tagi */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-right: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .t-dodano { background: rgba(35, 134, 54, 0.15); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.3); }
+        .t-usunieto { background: rgba(218, 54, 51, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.3); }
+        .t-poprawiono { background: rgba(31, 111, 235, 0.15); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.3); }
+        .t-komunikat { background: rgba(210, 153, 34, 0.15); color: #d29922; border: 1px solid rgba(210, 153, 34, 0.3); }
+        .t-bug { background: rgba(142, 21, 25, 0.15); color: #ff7b72; border: 1px solid rgba(255, 123, 114, 0.3); }
+
+        .line-item {
+            display: block;
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Changelog</h1>
+        <div class="subtitle">Historia aktualizacji systemu Dart Tracker</div>
+    </header>
+
+    <div id="changelog-container">
+        <p>v1.0</p>
+        <pre>D- Utworzono strone html z wpisywaniem osiągnięć w dart.</pre>
+
+        <p1>v1.1</p1>
+        <pre>P- Delikatne poprawki wizualne i poprawienie kodu.</pre>
+
+        <p1>v1.2</p1>
+        <pre>D- Dodano 5 i 6 strone do podsumowania.</pre>
+
+        <p1>v1.3</p1>
+        <pre>D- Dodanie ikonki strony.
+P- Zmiania zapisu backup.
+D- Nowy komunikat zapisu backup co poniedziałek.
+P- Zmiana graficzna 6 strony w podsumowaniu oraz poprawne wyświetlanie się nr strony w podsumowaniu.
+D- Wyświetlanie się komunikatu z potwierdzeniem czy napewno chcesz usunać wpis w "Ostatnio dodane".</pre>
+
+        <p1>v1.3</p1>
+        <pre>D- Dodano ikonkę na strone z changelogiem.
+P- Wygląd strony changelog.
+D- Znaczniki "Dodano", "Usunięto", "Poprawiono", "BUG", "KOMUNIKAT"</pre>
+
+        <p1>v1.3.1 - 26.01.2026</p1>
+        <pre>U- Stary przycisk "Zamknij" w oknie "Lista wpisów"
+D- Nowy przycisk "X" do zamknięcia okna "Lista wpisów", który również nie zmienia swojego położenia po poskrolownaiu historii wpisów.</pre>
+
+        <p1>v1.3.2 - 27.01.2026</p1>
+        <pre>D- Pełną date i godzinę do historii wpisów.
+K- Data i godzina dodania wpisów wyświetli się od nowych wspisów, te dodane wcześniej nie będą miały.
+P- Wyświetlaną legende na (i) w sekcji "Trening i Sukcesy". Wcześniej najeżdżało na górną część strony, teraz wyświetla się poprawnie.
+P- Tekst w polach do wpisania.</pre>
+
+        <p1>v1.3.3 01.02.2026</p1>
+        <pre>D- Legende do okna "Wygrane".
+P- Opis "Wyskokie kończenie (101+)" w podsumowaniu.
+P- Opis w polach do wypełnienia.
+P- Opis w oknie "Lista wpisów". Teraz jak wpiszesz wynik meczu 0 to nie wyświetli się jako "Wygrany mecz (+0)" tylko "Przegrany mecz (+0)".
+D- Osobne zajęte miejsca w turniejach.
+D- Pole do wpisywania zajętego miejsca w oknie "Wygrane".
+P- Wyświetlanie się storny 5 i 6. Teraz strona się nie rozciąga po wpisaniu zbyt wielu danych.
+D- Testowo dodano opcje która sama aktualizuje strone w momencie gdy użytkownik dodał sobie strone jako skrót na na ekranie głównym swojego telefonu.</pre>
+
+        <p1>v1.3.4 01.02.2026</p1>
+        <pre>B- Wgrałem złą wersje, co spowodowało brak dodanych fukcji.
+P- Poprawiono kod i teraz jest wszystko poprawnie. Wyświetlany numer wersji jedynie się nie zgadza.</pre>
+
+        <p1>v1.4 07.02.2026</p1>
+        <pre>D- 7 strone z trenigami. Teraz trenign nie zalicza się do głównych statytyk i nie będzie psuł śr wygranych.
+D- Przycisk "Trenig" dodajesz lokalizacje która ma uwzględniać to jako trening. Można max. jedną lokalizację zaznaczyć. Jak chcesz wyłączyć to wpisujesz losową lokalizację która nie istnieje.
+P- 1 strone.
+U- Śr legów i śr wygranych w wygrane mecze, z powodu że jest to już na 3 stronie.
+P- Pobierany Backup.
+P- Wyświetlanie się topke rozegranych meczy i wizyt, jeżeli dwa obiekty mają taką samą wartość, strona podlicza osiągnięcia zdobyte w tej lokalizacji i na jej podstawie ustawia topke.
+P- Wyświetlanie TWOJE SUKCESY, teraz ostatni zdobyty sukces wyświetla się na stronie 2.
+D- "🎯 Śr. legów (również przegranych)" do strony  3 i 7.
+D- Punkty za osiągnięcia: 180 - 1.4; 170 - 1.3; 50 - 1.2; 101+ - 1.1; wygrany mecz - 1; wygrany turniej 1.5.</pre>
+
+        <p1>v1.4.1 12.02.2026</p1>
+        <pre>P- (i) legendy, teraz nie wystarczy najechać tylko trzeba kliknąć, ponieważ najechanie źle działało z wersjami mobilnymi.
+P- Zmieniono kolejność wyświetlania podsumowania, zmieniono TOP ROZGRANYCH MECZY z strony 6 na stronę 5, TWOJE WIZYTY z strony 5 na stronę 6.</pre>
+
+        <p1>v1.4.2 13.02.2026</p1>
+        <pre>D- Wyświetlana lokalizacja w zajętych miejscach na turnieju.
+U- TOP ROZEGRANE MECZE.
+D- Wyświetlanie się TOP LOKALIZACJI, teraz zamiast "mecze" wyświetla się "wygrane - rozegrane".
+P- Kolejny raz zdobyte pkt za następujące sukcesy: 180 - 1; 170 - 0.95; Wygrany turniej - 0.9; 101+ - 0.33; Wygrany mecz - 0.3; 50 - 0.2; rozegrany mecz - 0.01.</pre>
+
+        <p1>v1.4.3 14.02.2026</p1>
+        <pre>P- TOP LOKALIZACJI, teraz zamiast opisu inforacyjno-instruktażowego "Aby zobaczyc wiecej scrolluj trzymając shift" wyświetla się liczba łącznie rozegranych meczy.
+P- Punktacje, rozegrany mecz z 0.01pkt na 0.001pkt.</pre>
+
+        <p1>v1.4.4 23.02.2026</p1>
+        <pre>D- Customową liste lokalizacji. Teraz po wpisaniu frazy na systemach mobilnym powinna wyświetlić się propozycja lokalizacji.</pre>
+
+        <p1>v1.4.5 03.03.2026</p1>
+        <pre>P- Puntacja za rozegrany mecz z 0.001 na -0.001. Spowoduje to by mniej przegrywać a więcej wygrywać meczy.
+P- Opis pola do wpisywania i legende "Wygrane".
+        </pre>
+
+        <p1>v1.5 12.03.2026</p1>
+        <pre>D- Przycisk ŚREDNIE, wpisujemy naszą średnią z meczu, później na stronie 7 wszystko będzie podliczane i pokazywać statystyki.
+P- Poprawiono wyświetlanie wpisów w "Ostatnie dodane".
+        </pre>
+
+        <p1>v1.5.1 25.03.2026</p1>
+        <pre>D- Średnia ostatnich 30 dni na stronie 7.
+P- Średnia ogólna na Średnia roczna na stronie 7. Będzie podliczać średnią od 1 stycznia do 31 grudnia bieżącego roku.
+D- Progres pracy 30dni do pełnego roku.
+        </pre>
+
+        <p1>v1.6 26.03.2026</p1>
+        <pre>D- Nowe logo strony.
+D- Dodano interaktywny nagłówek, teraz klikając bieżący rok, możesz cofnąć się w czasie i zobaczyć statystyki ubiegłego roku.
+D- Customową rozwijaną liste lokalizacji.
+U- Śr. legów oraz pole "Po ile legów" nic to nie wnosiło.
+D- 🎯 Ilość wygranych/rozegranych legów.
+P- Przeniesiono przycisk średnia na pole do wypełniania oraz tera zwpisujemy pełny wynik meczu.
+        </pre>
+
+        <p1>v1.6.1 27.03.2026</p1>
+        <pre>P- Zamiast "...rozegranych legów" teraz jest "...przegranych legów".
+        </pre>
+
+    <script>
+        const mappings = [
+            { key: 'D-', label: '✨ Dodano', class: 't-dodano' },
+            { key: 'U-', label: '🗑️ Usunięto', class: 't-usunieto' },
+            { key: 'P-', label: '✅ Poprawiono', class: 't-poprawiono' },
+            { key: 'K-', label: '📢 Komunikat', class: 't-komunikat' },
+            { key: 'B-', label: '🛡️ BUG', class: 't-bug' }
+        ];
+
+        const container = document.getElementById('changelog-container');
+        const elements = Array.from(container.querySelectorAll('p, p1, pre'));
+        const pairs = [];
+
+        // Grupowanie nagłówka z opisem
+        for (let i = 0; i < elements.length; i++) {
+            if (elements[i].tagName === 'P' || elements[i].tagName === 'P1') {
+                pairs.push({
+                    version: elements[i].innerText,
+                    content: elements[i+1] ? elements[i+1].innerHTML : ''
+                });
+            }
+        }
+
+        // Czyszczenie kontenera
+        container.innerHTML = '';
+
+        // Budowanie kart w odwróconej kolejności
+        pairs.reverse().forEach(pair => {
+            const card = document.createElement('div');
+            card.className = 'version-card';
+            
+            let formattedContent = pair.content.split('\n').map(line => {
+                if (!line.trim()) return '';
+                let processedLine = line;
+                mappings.forEach(m => {
+                    if (processedLine.includes(m.key)) {
+                        processedLine = processedLine.replace(m.key, `<span class="tag ${m.class}">${m.label}</span>`);
+                    }
+                });
+                return `<span class="line-item">${processedLine}</span>`;
+            }).join('');
+
+            card.innerHTML = `
+                <div class="version-header">
+                    <span class="version-number">${pair.version}</span>
+                </div>
+                <pre>${formattedContent}</pre>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
